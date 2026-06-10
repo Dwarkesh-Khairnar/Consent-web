@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Consent Dashboard</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <style>
+    /* body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    form {
+      margin-bottom: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    input,
+    select,
+    button {
+      padding: 10px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3498db;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background: #ffffff;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    a {
+      margin-left: 10px;
+      color: red;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    } */
+
+    .form-group{
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body class="align-itmes-center justify-content-center m-5">
+  <div class="align-itmes-center justify-content-center">
+    <div class=" card border-primary p-5 larger shadow" >
+
+      <h2 class="text-center">Your Consents</h2>
+
+      <form action="/consent/add" method="POST" class="">
+        <div class="form-group">
+          <input type="text" name="website" class="form-control" placeholder="Website or company name" required>
+        </div>
+
+        <div class="form-group">
+          <input type="text" name="dataShared" class="form-control"
+            placeholder="Which type of Data Shared (comma separated)" required>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" name="email" placeholder=" Mail for data share">
+        </div>
+
+        <div class="form-group">
+          <input type="text" name="purpose" class="form-control" placeholder="Purpose of data shering" required>
+        </div>
+
+        <div class="form-group d-flex " style="width: 30vw; height: 5vh;">
+          <select name="consentGiven" class="form-control " style="width: 30vw; height: 40px;">
+            <option value="true">Given</option>
+            <option value="false">Revoked</option>
+          </select>
+          <button type="submit" class="btn btn-primary" style="width:100vw; margin-left: 20px; height: 40px; ">Give_Consent</button>
+        </div>
+
+
+      </form>
+    <!-- </div> -->
+  </div>
+  <ul class="mt-5">
+    <% consents.forEach(consent=> { %>
+      <li>
+        <b>
+          <%= consent.website %>
+        </b> - <%= consent.dataShared.join(', ') %> - <%= consent.email %> - <%= consent.purpose %> - <%= consent.consentGiven ? ' Given'
+          : 'Revoked' %>
+          <a href="/consent/delete/<%= consent._id %>">Delete</a>
+      </li>
+      <% }) %>
+  </ul>
+  <a href="/consent/export">Export Data</a>
+</body>
+
+</html>
