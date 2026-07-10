@@ -13,17 +13,15 @@ for install mongoose
 
 
 ### for mail sending pakeges
-      npm i nodemailer
-
-### 6. 
-    npm i bcrypt
-
-7. npm i ejs
-
-8. npm i body-parser
+      npm i nodemailer 
+---
+      npm i bcrypt
+---
+      npm i ejs
+---
+      npm i body-parser
 
 It is all commands for install all dependencies
 
-All in one command
-
-npm i express express-session mongoose ejs nodemailer bcrypt body-parser
+### All in one command
+    npm install express express-session mongoose ejs nodemailer bcrypt body-parser
