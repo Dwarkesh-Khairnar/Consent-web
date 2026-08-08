@@ -14,3 +14,5 @@ It is all commands for install all dependencies
 - ## Backend
   - Node
   - Express
+- ## DB 
+    - Mogodb
