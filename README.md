@@ -8,7 +8,7 @@ It is all commands for install all dependencies
 ## Tech 
   - ## Frontend
       - Html
-      - css
+      - css tailwind 
       - js
       - ejs
 - ## Backend
