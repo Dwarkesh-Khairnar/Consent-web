@@ -16,3 +16,6 @@ It is all commands for install all dependencies
   - Express
 - ## DB 
     - Mogodb
+- ## Smtp server
+    - Turbo smtp: not good for production
+    - 
